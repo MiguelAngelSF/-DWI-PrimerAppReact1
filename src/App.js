@@ -30,16 +30,27 @@ function App() {
   const [Number2, setNumber2] = useState("");
   const [result, setResult] = useState("");
 
-  const sum = function (e) {
+  const add = function (e) {
     setResult(Number(Number1) + Number(Number2));
+  };
+  const rest = function (e) {
+    setResult(Number(Number1) - Number(Number2));
+  };
+  const division = function (e) {
+    setResult(Number(Number1) / Number(Number2));
+  };
+  const multi = function (e) {
+    setResult(Number(Number1) * Number(Number2));
   };
     
 
   return (
-    <div className="App">
+    <div className="App" class="container">
+      <h1>User List</h1>
       <input
         type="text"
         name="name"
+        class="name"
         onChange={(event) => {
           setName(event.target.value);
         }}
@@ -63,6 +74,8 @@ function App() {
           <li id={idx}>{`${person.name} ${person.lastName}`}</li>
         ))}
       </ul>
+
+      <h1>Basic Operations</h1>
       
       <label for="Number1">Ingresa el Primer Numero:
       </label>
@@ -92,7 +105,11 @@ function App() {
       >
         Add user
       </button> */}
-      <button className="btn" onClick={sum}>Sumar</button>
+      <br/>
+      <button className="btn" onClick={add}>Sumar</button>
+      <button className="btn" onClick={rest}>Restar</button>
+      <button className="btn" onClick={multi}>Multiplicar</button>
+      <button className="btn" onClick={division}>Dividir</button>
       <br/>
       <br/>
       <label for="Number1">Resultado:
@@ -109,7 +126,7 @@ function App() {
         ))}
       </ul> */}
     
-      
+    
 
     </div>
   );

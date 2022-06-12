@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-
 .text-red{
   color: red;
 }
@@ -20,3 +19,15 @@ code {
 .text-blue{
   color: blue;
 }
+
+.container{
+  display: flex;
+  margin: 0px 140px;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  size: 15px;
+  width: 300px;
+  
+}
+
