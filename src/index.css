@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(32, 32, 32);
+  color: #ffff;
 }
 
 code {
@@ -21,13 +23,23 @@ code {
 }
 
 .container{
-  display: flex;
-  margin: 0px 140px;
-  flex-direction: column;
-  justify-content: space-between;
   height: 300px;
-  size: 15px;
-  width: 300px;
-  
+  margin: auto;
+  display: flex;
 }
+
+.calc{
+  width: 30%;
+  display: inline-block;
+  height: 10%;
+  margin: auto;
+}
+
+.list{
+  width: 30%;
+  display: inline-block;
+  height: 10%;
+  margin: auto;
+}
+
 

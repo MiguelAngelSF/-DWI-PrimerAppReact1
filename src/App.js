@@ -14,13 +14,13 @@ function App() {
     },
   ]);
 
-  const [operation, setOperation] = useState([
-    {
-      result: "",
-      Number1: "",
-      Number2: ""
-    },
-  ])
+  // const [operation, setOperation] = useState([
+  //   {
+  //     result: "",
+  //     Number1: "",
+  //     Number2: ""
+  //   },
+  // ])
 
   const [name, setName] = useState("");
   const [lastName, setLastname] = useState("");
@@ -45,59 +45,72 @@ function App() {
     
 
   return (
+    ////////////////////LISTA DE USUARIOS//////////////////////////
     <div className="App" class="container">
-      <h1>User List</h1>
+      <div class="list">
+      <label for="Number1">First Name
+      </label>
       <input
         type="text"
         name="name"
-        class="name"
+        class="form-control"
         onChange={(event) => {
           setName(event.target.value);
         }}
       />
+       <br/>
+      <label for="Number1">Last Name
+      </label>
       <input
         type="text"
         name="lastName"
+        class="form-control"
         onChange={(event) => {
           setLastname(event.target.value);
         }}
       />
+       <br/>
       <button
+        class="btn btn-primary"
         onClick={() => {
           setPeople((current) => [{ name, lastName }, ...current]);
         }}
       >
         Add user
       </button>
-      <ul>
+      <br/>
+      <ul class="list-group list-group-numbered">
         {people.map((person, idx) => (
-          <li id={idx}>{`${person.name} ${person.lastName}`}</li>
+          <li class="list-group-item" id={idx}>{`${person.name} ${person.lastName}`}</li>
         ))}
       </ul>
+      </div>
 
-      <h1>Basic Operations</h1>
+      {/* OPERACIONES BASICAS */}
       
-      <label for="Number1">Ingresa el Primer Numero:
+      <div class="calc">
+      <label for="Number1">First Number
       </label>
       <input
         type="number"
         name="Number1"
+        class="form-control"
         onChange={(event) => {
           setNumber1(event.target.value);
         }}
       />
       <br/>
-      <br/>
-      <label for="Number1">Ingresa el Segundo Numero:
+      <label for="Number1">Second Number
       </label>
       <input
         type="number"
         name="Number2"
+        class="form-control"
         onChange={(event) => {
           setNumber2(event.target.value);
         }}
       />
-      <br/>
+      
       {/* <button
         onClick={()=> {
           setOperation((current) => [{ Number1, Number2, result }, ...current]);
@@ -106,17 +119,23 @@ function App() {
         Add user
       </button> */}
       <br/>
-      <button className="btn" onClick={add}>Sumar</button>
-      <button className="btn" onClick={rest}>Restar</button>
-      <button className="btn" onClick={multi}>Multiplicar</button>
-      <button className="btn" onClick={division}>Dividir</button>
+      <div class="buttons">
+        <button className="btn" type="button" class="btn btn-primary" 
+        onClick={add}>Sumar</button>
+        <button className="btn" type="button" class="btn btn-warning" 
+        onClick={rest}>Restar</button>
+        <button className="btn" type="button" class="btn btn-success" 
+        onClick={multi}>Multiplicar</button>
+        <button className="btn" type="button" class="btn btn-danger" 
+        onClick={division}>Dividir</button>
+      </div>
       <br/>
-      <br/>
-      <label for="Number1">Resultado:
+      <label for="Number1">Result
       </label>
       <input
         type="text"
         name="results"
+        class="form-control"
         value={result}
         disabled
       />
@@ -125,9 +144,8 @@ function App() {
           <li id={idx}>{`${operation.result}`}</li>
         ))}
       </ul> */}
-    
-    
 
+      </div>
     </div>
   );
 }
